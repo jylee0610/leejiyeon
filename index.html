@@ -4,7 +4,6 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>이지연 포트폴리오</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 <style>
@@ -24,9 +23,10 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; word-break: keep-all; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; word-break: keep-all;  }
   a { color: inherit; text-decoration: none; }
   img { display: block; max-width: 100%; }
+
 
   /* scroll progress */
   .progress { position: fixed; inset: 0 0 auto 0; height: 4px; z-index: 200; transform-origin: 0; transform: scaleX(0);
@@ -57,7 +57,7 @@
     padding: 0 var(--gutter); opacity: 0; pointer-events: none; transition: opacity .5s var(--ease); }
   .menu.open { opacity: 1; pointer-events: auto; }
   .menu a { font-family: var(--serif); font-weight: 700; font-size: clamp(56px, 8vw, 120px); line-height: 1.1; width: fit-content;
-    opacity: 0; transform: translateY(30px); transition: opacity .6s var(--ease), transform .6s var(--ease), color .3s; }
+    opacity: 0; transform: translateY(30px); transition: opacity .6s var(--ease), transform .6s var(--ease), color .3s; }  
   .menu.open a { opacity: 1; transform: none; }
   .menu a:hover { color: var(--ink-soft); }
   .menu-close { position: absolute; top: 24px; right: clamp(20px, 4vw, 64px); }
@@ -74,13 +74,14 @@
   .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft); }
 
   /* hero */
-  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items:center;}
   .hero h1 { font-size: clamp(64px, 11vw, 200px); }
   .hero h1 .l2 { display: block; margin-left: .5em; }
   .hero p { margin-top: 40px; max-width: 600px; font-size: clamp(16px, 1.3vw, 20px); line-height: 1.7; color: var(--muted); }
   .hero p strong { color: var(--ink); font-weight: 700; }
-  .scroll-cue { position: absolute; bottom: 40px; left: var(--gutter); display: flex; align-items: center; gap: 12px;
+  .scroll-cue { position: absolute; bottom: 40px; left: 50%; display: flex; align-items: center; gap: 12px;
     font-size: 12px; letter-spacing: .2em; font-weight: 600; }
+    .visual { position: absolute;  z-index: -1; overflow: hidden; }
   .scroll-cue::after { content: ""; width: 1px; height: 48px; background: var(--ink); animation: cue 1.8s var(--ease) infinite; transform-origin: top; }
   @keyframes cue { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
 
@@ -115,7 +116,7 @@
   .v-dots i.on { width: 28px; background: #fff; }
 
   /* strengths */
-  .services { padding: 20vh 0; }
+  .services { padding: 20vh 5vw; }
   .sec-title { font-size: clamp(56px, 8.5vw, 160px); margin-bottom: clamp(24px, 3vw, 40px); }
   .sec-desc { font-size: clamp(16px, 1.3vw, 20px); line-height: 1.7; color: var(--muted); max-width: 640px; margin-bottom: clamp(64px, 8vw, 140px); }
   .svc-list { display: flex; flex-direction: column; gap: clamp(80px, 10vw, 180px); }
@@ -130,7 +131,7 @@
   .svc-desc { margin-top: 32px; font-size: clamp(15px, 1.1vw, 18px); line-height: 1.75; color: var(--muted); max-width: 520px; }
   .svc-media { aspect-ratio: 4 / 3; border-radius: 32px; overflow: hidden; position: relative; background: var(--chip);
     display: flex; flex-direction: column; justify-content: center; padding: clamp(28px, 4vw, 64px); }
-  .svc-media .big { font-family: var(--serif); font-weight: 700; font-size: clamp(72px, 9vw, 168px); line-height: 1; letter-spacing: -.02em; }
+  .svc-media .big {font-weight: 700; font-size: clamp(72px, 9vw, 168px); line-height: 1; letter-spacing: -.02em; }
   .svc-media .big small { font-size: .4em; margin-left: .1em; }
   .svc-media .cap { margin-top: 16px; font-size: clamp(14px, 1.1vw, 18px); font-weight: 600; color: var(--muted); }
   .ph-1 { background: radial-gradient(circle at 30% 30%, #dff3ff, #f4f5f6 65%); }
@@ -143,12 +144,12 @@
   .tools .sec-desc { margin-bottom: 64px; }
   .marquee { overflow: hidden; border-block: 1px solid var(--line); padding: 32px 0; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
   .marquee-track { display: flex; gap: 64px; width: max-content; animation: marquee 30s linear infinite; }
-  .marquee-track span { font-family: var(--serif); font-weight: 700; font-size: clamp(36px, 4vw, 64px); white-space: nowrap; color: #b5b5b5; transition: color .3s; }
+  .marquee-track span {font-weight: 500; font-size: clamp(36px, 4vw, 64px); white-space: nowrap; color: #b5b5b5; transition: color .3s; }
   .marquee-track span:hover { color: var(--ink); }
   @keyframes marquee { to { transform: translateX(-50%); } }
 
   /* projects */
-  .projects { padding: 10vh 0 20vh; }
+  .projects { padding: 10vh 5vw; }
   .cases { display: flex; flex-direction: column; gap: clamp(80px, 10vw, 160px); }
   .case { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 96px); align-items: start; }
   .case-visual { border-radius: 32px; overflow: hidden; position: relative; aspect-ratio: 4 / 3.4; padding: clamp(24px, 3vw, 48px);
@@ -158,7 +159,7 @@
   .case-visual.g3 { background: linear-gradient(160deg, #3e3f44, #0f0e0e); }
   .case-visual .tag { align-self: flex-start; background: rgba(255,255,255,.2); border: 1px solid rgba(255,255,255,.35); backdrop-filter: blur(8px);
     border-radius: 999px; padding: 8px 16px; font-size: 13px; font-weight: 600; }
-  .case-visual .kpi { font-family: var(--serif); font-weight: 700; font-size: clamp(64px, 7vw, 128px); line-height: 1; }
+  .case-visual .kpi { font-weight: 700; font-size: clamp(64px, 7vw, 128px); line-height: 1; }
   .case-visual .kpi-cap { font-size: 15px; opacity: .85; margin-top: 8px; }
   .case-visual svg { width: 100%; height: auto; display: block; margin-top: 16px; }
   .case-visual .legend { display: flex; gap: 16px; font-size: 12px; opacity: .85; margin-top: 8px; }
@@ -170,7 +171,7 @@
   .case-body p { margin-top: 24px; font-size: clamp(15px, 1.1vw, 18px); line-height: 1.8; color: var(--muted); }
   .facts { margin-top: 32px; list-style: none; border-top: 1px solid var(--line); }
   .facts li { display: grid; grid-template-columns: 7.5em 1fr; gap: 16px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--line); }
-  .facts b { font-family: var(--serif); font-weight: 700; font-size: clamp(26px, 2vw, 34px); line-height: 1; }
+  .facts b { font-weight: 700; font-size: clamp(22px, 1.7vw, 28px); line-height: 1; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
   .facts span { font-size: 15px; line-height: 1.6; color: var(--muted); }
   .checklist { margin-top: 24px; list-style: none; display: grid; gap: 10px; }
   .checklist li { display: flex; gap: 10px; align-items: center; font-size: 15px; }
@@ -179,14 +180,19 @@
 
   /* channels (partners grid) */
   .partners { padding: 10vh 0 20vh; }
-  .chan { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-  .chan li { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 32px 20px; text-align: center; display: grid; gap: 6px; transition: background .3s; }
+   .partners h2 {padding: 5vw;}
+   .partners p {padding: 3vw;}
+  .chan { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); position: relative; overflow: hidden; }
+  .chan li { position: relative; padding: 32px 20px; text-align: center; display: grid; gap: 6px; transition: background .3s; }
+  .chan li::before, .chan li::after { content: ""; position: absolute; background: var(--line); pointer-events: none; }
+  .chan li::before { left: 0; bottom: 0; width: 100vw; height: 1px; }
+  .chan li::after { top: 0; right: 0; width: 1px; height: 100vh; }
   .chan li:hover { background: var(--chip); }
   .chan b { font-size: 18px; font-weight: 700; }
   .chan small { font-size: 13px; color: var(--ink-soft); }
 
   /* background timeline */
-  .career { padding: 10vh 0 20vh; }
+  .career { padding: 10vh 5vw }
   .timeline { list-style: none; border-top: 1px solid var(--ink); }
   .timeline li { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 24px; align-items: baseline; padding: clamp(24px, 3vw, 40px) 0; border-bottom: 1px solid var(--line); }
   .timeline .t-no { font-family: var(--serif); font-weight: 700; font-size: clamp(36px, 3.4vw, 60px); line-height: 1; color: var(--ink-soft); }
@@ -253,6 +259,7 @@
     </h1>
     <p class="reveal d3">매사에 함께 고민하며 성장을 추구하는 이지연입니다.<br />
       글로벌 헬스케어·뷰티 브랜드의 온라인 채널을 운영하며 <strong>일정 조율, 데이터 정리, 문서화</strong>를 맡아 왔습니다.</p>
+      <div class="visual"><video autoplay muted loop playsinline src="./img/white_loop_wide.mp4"></video></div>
     <div class="scroll-cue reveal d4">SCROLL</div>
   </section>
 
@@ -387,7 +394,7 @@
         <div class="case-body">
           <span class="eyebrow">Collaboration</span>
           <h3>본사와 플랫폼 사이를 잇는<br />기획전·팝업 커뮤니케이션</h3>
-          <ul class="case-meta"><li>무신사</li><li>리스테린 · 뉴트로지나</li><li>2024 ~ 2026</li></ul>
+          <ul class="case-meta"><li>무신사</li><li>2024 ~ 2026</li></ul>
           <p>본사의 캠페인 방향에 맞춰 행사 구성을 제안하고, 플랫폼 담당자와 쿠폰 지원 규모와 일정을 조율했습니다. 팝업 행사에서는 본사와 플랫폼 간 커뮤니케이션 창구를 맡았습니다.</p>
           <ul class="facts">
             <li><b>×2.8</b><span>2025.06 기획전 진행 월, 전월 대비 매출</span></li>
@@ -409,7 +416,7 @@
         <div class="case-body">
           <span class="eyebrow">Operations</span>
           <h3>두 회사, 14개 채널의 업무를<br />한 장의 시트로</h3>
-          <ul class="case-meta"><li>켄뷰 · 유한양행 뷰티</li><li>Google Sheets</li></ul>
+          <ul class="case-meta"><li>Google Sheets</li></ul>
           <p>업무마다 상태, 분류, 마감일, 메모를 남겼고, 일정 변경 시 그 이유까지 기록했습니다. 반복 실수가 생기던 업무는 체크리스트로 따로 만들어 매번 같은 순서로 확인했습니다.</p>
           <ul class="checklist">
             <li>썸네일 변경 여부</li>
@@ -452,12 +459,11 @@
   <!-- CAREER -->
   <section class="career inner" id="career">
     <h2 class="serif-title sec-title reveal">Career</h2>
-    <p class="sec-desc reveal d1">사진에서 디자인, 운영, MD까지. 맡은 일의 범위를 넓혀 오며 사무 역량을 쌓았습니다.</p>
+    <p class="sec-desc reveal d1"> 디자인, 운영, MD까지. 맡은 일의 범위를 넓혀 오며 사무 역량을 쌓았습니다.</p>
     <ol class="timeline">
-      <li class="reveal"><span class="t-no">01</span><div><h3>사진</h3><p>제품 촬영과 리터칭</p></div><span class="t-badge">사진기능사</span></li>
-      <li class="reveal"><span class="t-no">02</span><div><h3>이커머스 디자인</h3><p>상세페이지, 배너, 쇼핑몰 디자인</p></div><span class="t-badge">GTQ</span></li>
-      <li class="reveal"><span class="t-no">03</span><div><h3>온라인몰 운영</h3><p>자사 홈페이지·온라인몰 운영, 고객 응대</p></div><span class="t-badge">CS · 운영</span></li>
-      <li class="reveal"><span class="t-no">04</span><div><h3>이커머스 운영 MD</h3><p>글로벌 헬스케어·뷰티 브랜드 채널 운영, 일정 조율, 정산, 업무 관리</p></div><span class="t-badge">켄뷰 · 유한양행 뷰티</span></li>
+      <li class="reveal"><span class="t-no">01</span><div><h3>이커머스 디자인</h3><p>상세페이지, 배너, 쇼핑몰 디자인</p></div><span class="t-badge">GTQ</span></li>
+      <li class="reveal"><span class="t-no">02</span><div><h3>온라인몰 운영</h3><p>자사 홈페이지·온라인몰 운영, 고객 응대</p></div><span class="t-badge">CS · 운영</span></li>
+      <li class="reveal"><span class="t-no">03</span><div><h3>이커머스 운영 MD</h3><p>글로벌 헬스케어·뷰티 브랜드 채널 운영, 일정 조율, 정산, 업무 관리</p></div><span class="t-badge">켄뷰 · 유한양행 뷰티</span></li>
     </ol>
   </section>
 
@@ -469,16 +475,16 @@
       <span class="fill-line">함께 고민하며 성장하겠습니다.</span>
     </div>
     <div class="contact-actions">
-      <a href="mailto:[이메일 주소]" class="btn">메일 보내기 →</a>
+      <a href="mailto:[cs061049@gmail.com]" class="btn">메일 보내기 →</a>
       <a href="#" class="btn btn-ghost">이력서 다운로드</a>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="footer-logo reveal">Ji yeon.</div>
+  <div class="footer-logo reveal">Ji yeon Lee.</div>
   <div class="footer-bottom">
-    <div>[이메일 주소] · [연락처]<br />Ⓒ 2026 Lee Ji yeon. All rights reserved.</div>
+    <div>[cs061049@gmail.com] · [010-7654-0908]<br />Ⓒ 2026 Lee Ji yeon. All rights reserved.</div>
     <div class="footer-links"><a href="#strengths">Strengths</a><a href="#works">Works</a><a href="#career">Career</a></div>
   </div>
 </footer>
