@@ -205,6 +205,12 @@
   .timeline h3 { font-size: clamp(20px, 1.8vw, 30px); font-weight: 700; }
   .timeline p { margin-top: 8px; font-size: 16px; line-height: 1.7; color: var(--muted); }
   .timeline .t-badge { justify-self: end; background: var(--chip); border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 600; white-space: nowrap; }
+  .timeline .t-date { font-family: var(--serif); font-weight: 700; font-size: clamp(22px, 1.9vw, 32px); line-height: 1.15; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+  .timeline .t-role { display: block; margin-top: 6px; font-size: 15px; font-weight: 600; color: var(--ink); }
+  .creds { margin-top: clamp(40px, 5vw, 72px); display: grid; gap: 14px; }
+  .creds div { display: grid; grid-template-columns: 6em 1fr; gap: 16px; font-size: 15px; line-height: 1.6; }
+  .creds dt { font-weight: 700; }
+  .creds dd { color: var(--muted); }
 
   /* contact */
   .contact { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-block: 15vh; }
@@ -228,6 +234,13 @@
     .head-right .btn { display: none; }
     .timeline li { grid-template-columns: auto 1fr; }
     .timeline .t-badge { grid-column: 2; justify-self: start; }
+    .timeline .t-date { font-size: 18px; }
+  }
+  @media (max-width: 600px) {
+    .timeline li { grid-template-columns: 1fr; gap: 10px; }
+    .timeline .t-date br { display: none; }
+    .timeline .t-badge { grid-column: 1; }
+    .creds div { grid-template-columns: 1fr; gap: 2px; }
   }
   /* small laptop: keep text clear of the video */
   @media (min-width: 901px) and (max-width: 1200px) {
@@ -363,15 +376,15 @@
   <!-- STRENGTHS -->
   <section class="services inner" id="strengths">
     <h2 class="serif-title sec-title reveal">What I Do</h2>
-    <p class="sec-desc reveal d1">사무 업무의 기본인 조율, 정리, 관리, 문서 작성. 실제 업무에서 해 온 일로 보여드립니다.</p>
+    <p class="sec-desc reveal d1">사무 업무의 핵심인 기록, 정산, 일정 조율, 문서 작성. 이커머스 현장에서 매일 해 온 일로 보여드립니다.</p>
     <div class="svc-list">
       <article class="svc-card">
         <div>
-          <h3 class="svc-title">커뮤니케이션 &amp; 일정 조율</h3>
-          <ul class="svc-tags"><li>유관 부서 협업</li><li>외부 담당자 응대</li><li>일정 관리</li><li>조건 협의</li></ul>
-          <p class="svc-desc">브랜드 본사의 방향과 플랫폼 담당자의 조건 사이에서 판매가, 쿠폰 지원 규모, 행사 일정을 맞췄습니다. 여러 이해관계자의 요청을 정리해 하나의 일정으로 만드는 일에 익숙합니다.</p>
+          <h3 class="svc-title">업무 관리 &amp; 문서화</h3>
+          <ul class="svc-tags"><li>Google Sheets</li><li>업무 트래킹</li><li>체크리스트</li><li>인수인계</li></ul>
+          <p class="svc-desc">9개월 동안 처리한 업무 259건을 한 장의 시트로 관리했습니다. 일정이 바뀌면 이유까지 적어 두어, 누가 이어받아도 흐름을 알 수 있게 했습니다.</p>
         </div>
-        <div class="svc-media ph-1"><div class="big">14<small>개</small></div><div class="cap">동시에 담당한 판매 채널</div></div>
+        <div class="svc-media ph-3"><div class="big">259<small>건</small></div><div class="cap">9개월간 한 장의 시트로 기록·관리한 업무</div></div>
       </article>
       <article class="svc-card">
         <div>
@@ -383,11 +396,11 @@
       </article>
       <article class="svc-card">
         <div>
-          <h3 class="svc-title">업무 관리 &amp; 문서화</h3>
-          <ul class="svc-tags"><li>Google Sheets</li><li>업무 트래킹</li><li>체크리스트</li><li>인수인계</li></ul>
-          <p class="svc-desc">9개월 동안 처리한 업무 259건을 한 장의 시트로 관리했습니다. 일정이 바뀌면 이유까지 적어 두어, 누가 이어받아도 흐름을 알 수 있게 했습니다.</p>
+          <h3 class="svc-title">커뮤니케이션 &amp; 일정 조율</h3>
+          <ul class="svc-tags"><li>유관 부서 협업</li><li>외부 담당자 응대</li><li>일정 관리</li><li>조건 협의</li></ul>
+          <p class="svc-desc">브랜드 본사의 방향과 플랫폼 담당자의 조건 사이에서 판매가, 쿠폰 지원 규모, 행사 일정을 맞췄습니다. 여러 이해관계자의 요청을 정리해 하나의 일정으로 만드는 일에 익숙합니다.</p>
         </div>
-        <div class="svc-media ph-3"><div class="big">93<small>%</small></div><div class="cap">업무 완료율 (259건 중 242건)</div></div>
+        <div class="svc-media ph-1"><div class="big">14<small>개</small></div><div class="cap">동시에 담당한 판매 채널</div></div>
       </article>
       <article class="svc-card">
         <div>
@@ -404,7 +417,7 @@
   <section class="tools">
     <div class="inner">
       <h2 class="serif-title sec-title reveal">My Toolkit</h2>
-      <p class="sec-desc reveal d1">업무에 실제로 써 온 도구들입니다.</p>
+      <p class="sec-desc reveal d1">업무에 실제로 써 온 도구들입니다. 지금 보고 계신 이 사이트도 HTML·CSS·JavaScript로 직접 디자인하고 코딩했습니다.</p>
     </div>
     <div class="marquee">
       <div class="marquee-track">
@@ -419,25 +432,30 @@
     <h2 class="serif-title sec-title reveal">Selected Works</h2>
     <p class="sec-desc reveal d1">실제 업무 데이터로 확인한 결과입니다. 금액은 공개하지 않고 비율과 추이로만 표시했습니다.</p>
     <div class="cases">
-
       <article class="case svc-card">
-        <div class="case-visual g1">
-          <span class="tag">Case 01 · 채널 성장</span>
+        <div class="case-visual g3">
+          <span class="tag">Case 01 · 업무 관리</span>
           <div>
-            <div class="kpi">+153%</div>
-            <div class="kpi-cap">전년 동기 대비 매출 (2026년 1~5월)</div>
-            <svg id="lotteChart" viewBox="0 0 340 120" role="img" aria-label="2025년 1월부터 2026년 5월까지 월별 매출이 꾸준히 상승한 추이"></svg>
+            <div class="kpi">259<small style="font-size:.4em">건</small></div>
+            <div class="kpi-cap">9개월간 기록·관리한 업무 (2025.07 ~ 2026.03)</div>
+            <svg id="taskChart" viewBox="0 0 340 40" role="img" aria-label="업무 구성: 일반 업무 170건, 행사 제안 37건, 영수증·CS 28건, 이미지 변경 11건, 기타 13건"></svg>
+            <div class="legend" id="taskLegend" style="flex-wrap:wrap"></div>
           </div>
         </div>
         <div class="case-body">
-          <span class="eyebrow">Channel growth</span>
-          <h3>담당자와 조건을 조율해<br />채널 매출 2.5배로</h3>
-          <ul class="case-meta"><li>롯데아이몰</li><li>켄뷰</li><li>2023 하반기 ~ 2026.06</li></ul>
-          <p>40대 주부·가족 단위 고객이 많은 채널이라 할인 체감이 구매를 좌우한다고 판단했습니다. 채널 담당자와 판매수수료, 판매가, 사은품 구성을 협의해 행사 조건을 맞췄습니다.</p>
+          <span class="eyebrow">Operations</span>
+          <h3>브랜드사 2곳, 14개 채널의 업무를<br />한 장의 시트로</h3>
+          <ul class="case-meta"><li>이피코리아</li><li>Google Sheets</li></ul>
+          <p>업무마다 상태, 분류, 마감일, 메모를 남겼고, 일정 변경 시 그 이유까지 기록했습니다. 반복 실수가 생기던 업무는 체크리스트로 따로 만들어 매번 같은 순서로 확인했습니다.</p>
+          <ul class="checklist">
+            <li>썸네일 변경 여부</li>
+            <li>사은품 안내 이미지 상단 노출</li>
+            <li>사은품 셋팅</li>
+            <li>재고 셋팅</li>
+          </ul>
           <ul class="facts">
-            <li><b>2.7→5.0%</b><span>회사 전체 온라인 매출 중 채널 비중, 약 2배 확대</span></li>
-            <li><b>6위</b><span>30여 개 판매처 중 매출 순위 (2026년 1~5월)</span></li>
-            <li><b>+18%</b><span>같은 기간 회사 전체 성장률보다 크게 앞섬</span></li>
+            <li><b>2개사</b><span>대행사 소속으로 브랜드사 두 곳(켄뷰·유한양행 뷰티)의 업무를 동시에 관리</span></li>
+            <li><b>14개</b><span>채널별 상품 등록·프로모션 일정을 한 시트에서 추적</span></li>
           </ul>
         </div>
       </article>
@@ -465,33 +483,24 @@
       </article>
 
       <article class="case svc-card">
-        <div class="case-visual g3">
-          <span class="tag">Case 03 · 업무 관리</span>
+        <div class="case-visual g1">
+          <span class="tag">Case 03 · 채널 성장</span>
           <div>
-            <div class="kpi">259<small style="font-size:.4em">건</small></div>
-            <div class="kpi-cap">9개월간 기록·관리한 업무 (2025.07 ~ 2026.03)</div>
-            <svg id="taskChart" viewBox="0 0 340 40" role="img" aria-label="업무 구성: 일반 업무 170건, 행사 제안 37건, 영수증·CS 28건, 이미지 변경 11건, 기타 13건"></svg>
-            <div class="legend" id="taskLegend" style="flex-wrap:wrap"></div>
+            <div class="kpi">6위</div>
+            <div class="kpi-cap">30여 개 판매처 중 매출 순위 (2026년 1~5월)</div>
+            <svg id="lotteChart" viewBox="0 0 340 120" role="img" aria-label="2025년 1월부터 2026년 5월까지 월별 매출이 꾸준히 상승한 추이"></svg>
           </div>
         </div>
         <div class="case-body">
-          <span class="eyebrow">Operations</span>
-          <h3>두 회사, 14개 채널의 업무를<br />한 장의 시트로</h3>
-          <ul class="case-meta"><li>Google Sheets</li></ul>
-          <p>업무마다 상태, 분류, 마감일, 메모를 남겼고, 일정 변경 시 그 이유까지 기록했습니다. 반복 실수가 생기던 업무는 체크리스트로 따로 만들어 매번 같은 순서로 확인했습니다.</p>
-          <ul class="checklist">
-            <li>썸네일 변경 여부</li>
-            <li>사은품 안내 이미지 상단 노출</li>
-            <li>사은품 셋팅</li>
-            <li>재고 셋팅</li>
-          </ul>
+          <span class="eyebrow">Channel growth</span>
+          <h3>행사 조건 협의로<br />채널 성장에 기여</h3>
+          <ul class="case-meta"><li>롯데아이몰</li><li>켄뷰</li><li>2023 하반기 ~ 2026.06</li></ul>
+          <p>40대 주부·가족 단위 고객이 많은 채널이라 할인 체감이 구매를 좌우한다고 판단했습니다. 그래서 채널 담당자와 판매수수료, 판매가, 사은품 구성 협의를 맡아 행사 조건을 맞췄습니다.</p>
           <ul class="facts">
-            <li><b>93%</b><span>완료율 (259건 중 242건)</span></li>
-            <li><b>2개사</b><span>브랜드사 두 곳의 업무를 동시에 관리</span></li>
+            <li><b>2.3→5.0%</b><span>회사 전체 온라인 매출 중 채널 비중 (2025년 → 2026년, 각 1~5월)</span></li>
           </ul>
         </div>
       </article>
-
     </div>
   </section>
 
@@ -520,12 +529,18 @@
   <!-- CAREER -->
   <section class="career inner" id="career">
     <h2 class="serif-title sec-title reveal">Career</h2>
-    <p class="sec-desc reveal d1"> 디자인, 운영, MD까지. 맡은 일의 범위를 넓혀 오며 사무 역량을 쌓았습니다.</p>
+    <p class="sec-desc reveal d1">총 경력 7년 6개월. 디자인, 운영, MD를 거치며 가장 자신 있게 된 일은 기록하고, 정산하고, 일정을 맞추는 일이었습니다. 이제 그 일을 중심에 두고 일하려 합니다.</p>
     <ol class="timeline">
-      <li class="reveal"><span class="t-no">01</span><div><h3>이커머스 디자인</h3><p>상세페이지, 배너, 쇼핑몰 디자인</p></div><span class="t-badge">GTQ</span></li>
-      <li class="reveal"><span class="t-no">02</span><div><h3>온라인몰 운영</h3><p>자사 홈페이지·온라인몰 운영, 고객 응대</p></div><span class="t-badge">CS · 운영</span></li>
-      <li class="reveal"><span class="t-no">03</span><div><h3>이커머스 운영 MD</h3><p>글로벌 헬스케어·뷰티 브랜드 채널 운영, 일정 조율, 정산, 업무 관리</p></div><span class="t-badge">켄뷰 · 유한양행 뷰티</span></li>
+      <li class="reveal"><span class="t-date">2023.05 –<br />2026.06</span><div><h3>이피코리아</h3><span class="t-role">뷰티팀 사원 · 이커머스 운영 MD</span><p>리스테린·아비노 등 켄뷰, 유한양행 뷰티 브랜드의 온라인 채널 14곳 운영. 신규 채널 발굴·입점, 채널별 프로모션 기획과 일정 조율, 월 정산과 업무 관리.</p></div><span class="t-badge">3년 2개월</span></li>
+      <li class="reveal"><span class="t-date">2020.10 –<br />2021.07</span><div><h3>플렉스플레이코리아</h3><span class="t-role">MD개발 주임</span><p>자사 홈페이지·온라인몰 운영과 고객 응대. 매출 활성화를 위한 자사몰 이벤트 기획과 디자인 업데이트.</p></div><span class="t-badge">10개월</span></li>
+      <li class="reveal"><span class="t-date">2018.01 –<br />2019.07</span><div><h3>에스엠유통</h3><span class="t-role">사원 · 이커머스 디자인</span><p>판매 채널별 가이드에 맞춘 상품 상세페이지 제작, 프로모션 배너·이벤트 페이지 디자인.</p></div><span class="t-badge">1년 7개월</span></li>
+      <li class="reveal"><span class="t-date">2015.03 –<br />2017.01</span><div><h3>베이비윙크</h3><span class="t-role">사원 · 포토그래퍼</span><p>촬영 결과물 보정·리터칭, 대량 이미지 데이터 관리와 최종 결과물 편집.</p></div><span class="t-badge">1년 11개월</span></li>
     </ol>
+    <dl class="creds reveal">
+      <div><dt>자격증</dt><dd>GTQ (2012) · 사진기능사 (2012)</dd></div>
+      <div><dt>교육</dt><dd>프론트엔드 취업아카데미 (2022) · UX/UI 프로페셔널 (2020) · 편집디자인·디지털퍼블리싱 (2017)</dd></div>
+      <div><dt>학력</dt><dd>인천재능대학교 사진영상미디어과 졸업 (2015)</dd></div>
+    </dl>
   </section>
 
   <!-- CONTACT -->
@@ -545,7 +560,7 @@
 <footer>
   <div class="footer-logo reveal">Ji yeon Lee.</div>
   <div class="footer-bottom">
-    <div>[cs061049@gmail.com] · [010-7654-0908]<br />Ⓒ 2026 Lee Ji yeon. All rights reserved.</div>
+    <div><a href="mailto:cs061049@gmail.com">cs061049@gmail.com</a><br />Designed &amp; coded by Ji yeon Lee · Ⓒ 2026</div>
     <div class="footer-links"><a href="#strengths">Strengths</a><a href="#works">Works</a><a href="#career">Career</a></div>
   </div>
 </footer>
